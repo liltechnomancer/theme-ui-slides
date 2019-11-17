@@ -1,0 +1,245 @@
+import { Invert, FullScreenCode, Appear } from "mdx-deck"
+import { hack, swiss } from 'mdx-deck/themes'
+import { deep } from "@theme-ui/presets"
+import { Flex, Close, Spinner, Button, Box, Heading } from '@theme-ui/components'
+import Newsletter from "./Newsletter" 
+import Header from "./header"
+import Center from "./center"
+import myTheme from "./theme"
+
+export const theme = myTheme
+
+
+<Center>
+<Box>
+
+<Heading>Theme-UI</Heading>
+
+<Spinner />
+
+<Appear>
+
+AKA what I have been waiting for...
+
+</Appear>
+</Box>
+</Center>
+
+---
+
+<Invert>
+
+# About Me
+
+- Self-taught  
+- JAMstack Developer  
+- Bootcamp Mentor  
+- JAMstack Phoenix Host
+
+</Invert> 
+
+---
+
+<Center>
+<Header>
+What is Theme-UI?
+</Header>
+</Center>
+
+---
+
+<Header>
+What Theme-UI isn't
+</Header>
+
+
+Theme-UI Is not a CSS in JS Library
+
+👩‍🎤💄💅
+
+In fact its built on top of Emotion! 👩‍🎤
+
+
+---
+
+<Header>
+What Theme-UI is
+</Header>
+
+
+- Theme-UI is complete library built around creating themeable components. 
+- It provides you a system for creating themes, and components that can be driven by them.
+- It calls itself a mini-framework
+
+---
+
+<Header>
+  What do themes look like? 
+</Header>
+
+Simple Javascript Objects.
+
+```js
+export default {
+  colors: {
+    text: '#000',
+    background: '#fff',
+    primary: '#33e',
+  },
+  ...
+}
+```
+
+---
+
+<Header>
+  Where does the power come from?
+</Header>
+
+Using Tokens & SX
+
+```js
+export const theme = {
+    colors: {
+        primary: 'blue',
+        secondary: 'red',
+    }
+}
+
+export const Component = () => (
+<div 
+sx={{   width: "100px", 
+        height: "100px", 
+        backgroundColor: "primary"
+    }} 
+/>)
+```
+
+---
+
+<Header>
+    Theme Components
+</Header>
+
+Theme UI has an optional Package of Components. 
+
+It includes stuff like Inputs, Buttons, Loading Spinners, and much more!
+
+---
+
+<Header>
+    Styling Theme Components
+</Header>
+
+- Styling these components is very easy!   
+- They are styled right on the theme object.
+- These components can be used to build bigger, more complicated themeable components. 
+
+---
+
+<Header>
+Components can define variants
+</Header>
+
+```jsx
+<Button>Click</Button>
+<Button variant="secondary">Click</Button>
+```
+
+<Button>Click</Button>
+<Button variant="secondary">Click</Button>
+
+
+
+---
+
+### Defining Variants
+
+
+```js
+export default {
+  buttons: {
+    primary: {
+      backgroundColor: "primary",
+      padding: 4,
+      margin: 4
+    },
+    secondary: {
+      backgroundColor: "secondary",
+      padding: 2,
+      margin: 2
+    }
+  }
+  ...
+}
+```
+
+
+
+--- 
+
+<Header>
+Creating Components
+</Header>
+
+The 
+
+---
+
+<Header>
+Creating Components
+</Header>
+
+```jsx
+const Header = ({ children }) => (
+  <Flex
+    sx={{
+      alignItems: "center",
+      justifyContent: "center",
+      padding: 4,
+      margin: 4,
+      color: "secondary",
+      border: theme => `1px solid ${theme.colors.primary}`
+    }}
+  >
+    {children}
+  </Flex>
+);
+```
+
+---
+
+<Header>
+Break Points!
+</Header>
+
+You can define responsive styles just by using arrays!
+
+```jsx
+{
+    fontSize: ['10px', '20px', '30px']
+    color: ['green', 'red', 'blue']
+}
+```
+You can also define your own breakpoints!
+
+
+--- 
+
+<Header>
+    Even styles MDX!
+</Header>
+
+```js
+  styles: {
+    h1: {
+      fontSize: 32,
+      fontFamily: 'heading',
+      fontWeight: 'heading',
+      color: 'primary',
+      mt: 4,
+      mb: 2,
+    },
+  }
+}
+```
