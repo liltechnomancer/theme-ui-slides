@@ -21,7 +21,7 @@ export const theme = {
     pre: {
       ...hack.styles.pre,
       fontSize: "26px",
-      lineHeight: "1.5"
+      lineHeight: "1.25"
     }
   }
 };

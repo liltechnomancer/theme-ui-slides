@@ -4,11 +4,12 @@ import { Flex } from "@theme-ui/components";
 
 export const Header = ({ children }) => (
   <Flex
+    my={4}
     sx={{
       alignItems: "center",
       justifyContent: "center",
       padding: 4,
-      margin: 4,
+      //   margin: 4,
       color: "secondary",
       border: theme => `1px solid ${theme.colors.primary}`
     }}

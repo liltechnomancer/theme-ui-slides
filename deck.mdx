@@ -1,4 +1,4 @@
-import { Invert, FullScreenCode, Appear } from "mdx-deck"
+import { Invert, FullScreenCode, Appear, Split } from "mdx-deck"
 import { hack, swiss } from 'mdx-deck/themes'
 import { deep } from "@theme-ui/presets"
 import { Flex, Close, Spinner, Button, Box, Heading } from '@theme-ui/components'
@@ -13,9 +13,11 @@ export const theme = myTheme
 <Center>
 <Box>
 
-<Heading>Theme-UI</Heading>
+<Heading css={`text-align: center;`}>Theme-UI</Heading>
 
-<Spinner />
+<Flex my={4} mx="auto">
+<Spinner mx="auto" />
+</Flex>
 
 <Appear>
 
@@ -52,13 +54,18 @@ What is Theme-UI?
 What Theme-UI isn't
 </Header>
 
-
+<Center css={`height: 100px`}>
 Theme-UI Is not a CSS in JS Library
 
+
 👩‍🎤💄💅
+</Center>
 
-In fact its built on top of Emotion! 👩‍🎤
+<Center css={`height: 100px`}>
+In fact its built on top of Emotion! 
 
+👩‍🎤
+</Center>
 
 ---
 
@@ -96,7 +103,14 @@ export default {
   Where does the power come from?
 </Header>
 
-Using Tokens & SX
+React Context +  
+Using Tokens & SX Prop
+
+Theme-UI uses the new context API to automagically feed your theme to your components, and third party components built with theme ui.
+
+---
+
+<FullScreenCode>
 
 ```js
 export const theme = {
@@ -113,7 +127,18 @@ sx={{   width: "100px",
         backgroundColor: "primary"
     }} 
 />)
+
+
+// layout.js
+import { ThemeProvider } from 'theme-ui'
+import theme from './theme'
+export default props => (
+  <ThemeProvider theme={theme}>{props.children}</ThemeProvider>
+)
 ```
+
+
+</FullScreenCode>
 
 ---
 
@@ -173,16 +198,6 @@ export default {
   ...
 }
 ```
-
-
-
---- 
-
-<Header>
-Creating Components
-</Header>
-
-The 
 
 ---
 
