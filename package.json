@@ -12,6 +12,7 @@
     "theme-ui": "^0.2.49"
   },
   "scripts": {
-    "start": "mdx-deck deck.mdx"
+    "start": "mdx-deck deck.mdx",
+    "build": "mdx-deck build deck.mdx"
   }
 }
